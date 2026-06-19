@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  REUSABLE BLOG POST TEMPLATE
+  ------------------------------------------------------------
+  To write a new post:
+    1. Copy this file to blog/your-post-slug.html
+    2. Replace everything marked {{ ... }} below
+    3. Write your content inside <div class="prose"> ... </div>
+       (use h2/h3, p, ul/ol, blockquote, pre/code, figure/img)
+    4. Add a card linking to it in blog/index.html
+  All styling comes from ../css/system.css + ../css/site.css.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ POST TITLE }}, Sebastian Hodge</title>
+  <meta name="description" content="{{ ONE-LINE SUMMARY FOR SEARCH/SOCIAL }}" />
+  <link rel="canonical" href="https://sebastianhodge.com/blog/{{ your-post-slug }}.html" />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sebastianhodge.com/blog/{{ your-post-slug }}.html" />
+  <meta property="og:title" content="{{ POST TITLE }}" />
+  <meta property="og:description" content="{{ ONE-LINE SUMMARY FOR SEARCH/SOCIAL }}" />
+  <meta property="og:image" content="https://sebastianhodge.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ POST TITLE }}" />
+  <meta name="twitter:description" content="{{ ONE-LINE SUMMARY FOR SEARCH/SOCIAL }}" />
+  <meta name="twitter:image" content="https://sebastianhodge.com/images/og-image.png" />
+
+  <link rel="stylesheet" href="../css/system.css" />
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <!-- Update the slug, title, description, and dates (YYYY-MM-DD) below -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "{{ POST TITLE }}",
+        "description": "{{ ONE-LINE SUMMARY FOR SEARCH/SOCIAL }}",
+        "image": "https://sebastianhodge.com/images/og-image.png",
+        "datePublished": "{{ YYYY-MM-DD }}",
+        "dateModified": "{{ YYYY-MM-DD }}",
+        "mainEntityOfPage": "https://sebastianhodge.com/blog/{{ your-post-slug }}.html",
+        "url": "https://sebastianhodge.com/blog/{{ your-post-slug }}.html",
+        "author": {
+          "@type": "Person",
+          "@id": "https://sebastianhodge.com/#person",
+          "name": "Sebastian Hodge",
+          "url": "https://sebastianhodge.com/"
+        },
+        "publisher": { "@id": "https://sebastianhodge.com/#person" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sebastianhodge.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://sebastianhodge.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{ POST TITLE }}", "item": "https://sebastianhodge.com/blog/{{ your-post-slug }}.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="site-skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a class="site-brand" href="../index.html" aria-label="Sebastian Hodge, home">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <nav class="site-navlinks" id="navlinks" aria-label="Primary">
+        <a class="site-navlink" href="../index.html#work">Work</a>
+        <a class="site-navlink" href="../index.html#about">About</a>
+        <a class="site-navlink" href="index.html" aria-current="page">Writing</a>
+        <a class="site-navlink" href="../index.html#contact">Contact</a>
+        <a class="mp-btn mp-btn--sm" href="../index.html#contact">Get in touch</a>
+      </nav>
+      <button class="mp-btn mp-btn--icon mp-btn--secondary site-nav__toggle" id="navToggle"
+              aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+        <svg class="mp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="mp-shell">
+
+      <!-- ===== Article header ===== -->
+      <header class="article-head mp-stack mp-stack--lg">
+        <a class="mp-meta" href="index.html">All writing</a>
+        <h1 class="mp-display">{{ POST TITLE }}</h1>
+        <p class="mp-meta">{{ MONTH DAY, YEAR }}</p>
+      </header>
+
+      <!-- ===== Article body ===== -->
+      <div class="prose">
+        <p>{{ Opening paragraph. Set the scene and tell the reader why this
+          post is worth their time. }}</p>
+
+        <h2>A section heading</h2>
+        <p>Body text. Links look like <a href="#">this</a>. Inline
+          <code>code</code> is styled too.</p>
+
+        <blockquote>A pull quote for the line you want people to remember.</blockquote>
+
+        <h3>A subsection</h3>
+        <ul>
+          <li>List item one</li>
+          <li>List item two</li>
+        </ul>
+
+        <pre><code>// a code block
+function hello() {
+  return "world";
+}</code></pre>
+
+        <figure>
+          <img src="../screenshots/preview-desktop.png" alt="{{ describe the image }}" />
+          <figcaption>{{ Optional caption. }}</figcaption>
+        </figure>
+
+        <hr />
+        <p>{{ Closing thought, and maybe a call to action. }}</p>
+      </div>
+
+      <!-- ===== Post footer ===== -->
+      <footer class="article-head mp-stack mp-stack--lg" style="margin-top:var(--space-3xl);">
+        <hr class="mp-divider" />
+        <div class="mp-row mp-row--between">
+          <a class="mp-btn mp-btn--secondary" href="index.html">All writing</a>
+          <a class="mp-btn mp-btn--accent" href="../index.html#contact">Get in touch</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-brand" href="../index.html">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <div class="mp-row">
+        <a class="site-navlink" href="https://www.linkedin.com/in/hodge-sebastian/">LinkedIn</a>
+        <a class="site-navlink" href="index.html">Writing</a>
+      </div>
+      <p class="mp-meta">© <span id="year"></span> Sebastian Hodge</p>
+    </div>
+  </footer>
+
+  <script>
+    var t = document.getElementById('navToggle');
+    var n = document.getElementById('navlinks');
+    if (t && n) {
+      t.addEventListener('click', function () {
+        var open = n.classList.toggle('is-open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

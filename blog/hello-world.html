@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hello, world: building this site, Sebastian Hodge</title>
+  <meta name="description" content="How I assembled a personal site on top of the Mosaic Press editorial design system." />
+  <link rel="canonical" href="https://sebastianhodge.com/blog/hello-world.html" />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sebastianhodge.com/blog/hello-world.html" />
+  <meta property="og:title" content="Hello, world: building this site" />
+  <meta property="og:description" content="How I assembled a personal site on top of the Mosaic Press editorial design system." />
+  <meta property="og:image" content="https://sebastianhodge.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hello, world: building this site" />
+  <meta name="twitter:description" content="How I assembled a personal site on top of the Mosaic Press editorial design system." />
+  <meta name="twitter:image" content="https://sebastianhodge.com/images/og-image.png" />
+
+  <link rel="stylesheet" href="../css/system.css" />
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Hello, world: building this site",
+        "description": "How I assembled a personal site on top of the Mosaic Press editorial design system.",
+        "image": "https://sebastianhodge.com/images/og-image.png",
+        "datePublished": "2026-06-18",
+        "dateModified": "2026-06-18",
+        "mainEntityOfPage": "https://sebastianhodge.com/blog/hello-world.html",
+        "url": "https://sebastianhodge.com/blog/hello-world.html",
+        "author": {
+          "@type": "Person",
+          "@id": "https://sebastianhodge.com/#person",
+          "name": "Sebastian Hodge",
+          "url": "https://sebastianhodge.com/"
+        },
+        "publisher": { "@id": "https://sebastianhodge.com/#person" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sebastianhodge.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://sebastianhodge.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Hello, world: building this site", "item": "https://sebastianhodge.com/blog/hello-world.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="site-skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a class="site-brand" href="../index.html" aria-label="Sebastian Hodge, home">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <nav class="site-navlinks" id="navlinks" aria-label="Primary">
+        <a class="site-navlink" href="../index.html#work">Work</a>
+        <a class="site-navlink" href="../index.html#about">About</a>
+        <a class="site-navlink" href="index.html" aria-current="page">Writing</a>
+        <a class="site-navlink" href="../index.html#contact">Contact</a>
+        <a class="mp-btn mp-btn--sm" href="../index.html#contact">Get in touch</a>
+      </nav>
+      <button class="mp-btn mp-btn--icon mp-btn--secondary site-nav__toggle" id="navToggle"
+              aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+        <svg class="mp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="mp-shell">
+
+      <header class="article-head mp-stack mp-stack--lg">
+        <a class="mp-meta" href="index.html">All writing</a>
+        <h1 class="mp-display">Hello, world: building this site</h1>
+        <p class="mp-meta">Jun 18, 2026</p>
+      </header>
+
+      <div class="prose">
+        <p>This is the first post on my new site. I wanted somewhere to keep my
+          work and my writing in one place, without reaching for a heavy
+          framework. So this is just HTML and CSS.</p>
+
+        <h2>The design system</h2>
+        <p>Everything you see is built on a small editorial design system called
+          <strong>Mosaic Press</strong>: cream paper, ink-black panels, and a
+          high-voltage violet accent. The components live in a single
+          <code>system.css</code> file, so every page just links it and uses the
+          <code>mp-*</code> classes.</p>
+
+        <blockquote>Depth comes from color blocking, not glassy shadows.</blockquote>
+
+        <h3>Why no framework?</h3>
+        <ul>
+          <li>It loads instantly and hosts anywhere, including GitHub Pages.</li>
+          <li>There's no build step to babysit.</li>
+          <li>Every post is a plain file I can copy from a template.</li>
+        </ul>
+
+        <h2>Writing a new post</h2>
+        <p>To add an article I copy <code>post-template.html</code>, fill in the
+          title and body, and add a card on the blog index. That's the whole
+          workflow:</p>
+
+        <pre><code>cp blog/post-template.html blog/my-new-post.html
+# edit the title and prose, then link it from blog/index.html</code></pre>
+
+        <hr />
+        <p>More soon. If you want to talk shop, my inbox is open.</p>
+      </div>
+
+      <footer class="article-head mp-stack mp-stack--lg" style="margin-top:var(--space-3xl);">
+        <hr class="mp-divider" />
+        <div class="mp-row mp-row--between">
+          <a class="mp-btn mp-btn--secondary" href="index.html">All writing</a>
+          <a class="mp-btn mp-btn--accent" href="../index.html#contact">Get in touch</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-brand" href="../index.html">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <div class="mp-row">
+        <a class="site-navlink" href="https://www.linkedin.com/in/hodge-sebastian/">LinkedIn</a>
+        <a class="site-navlink" href="index.html">Writing</a>
+      </div>
+      <p class="mp-meta">© <span id="year"></span> Sebastian Hodge</p>
+    </div>
+  </footer>
+
+  <script>
+    var t = document.getElementById('navToggle');
+    var n = document.getElementById('navlinks');
+    if (t && n) {
+      t.addEventListener('click', function () {
+        var open = n.classList.toggle('is-open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

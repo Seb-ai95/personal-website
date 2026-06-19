@@ -1,0 +1,11 @@
+# Local Claude Code settings and agent memory — never publish
+.claude/
+
+# Design-system kit artifacts — kept local, not part of the live site
+html/
+DESIGN.md
+metadata.json
+
+# OS cruft
+.DS_Store
+Thumbs.db

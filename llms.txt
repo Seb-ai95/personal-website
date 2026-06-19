@@ -1,0 +1,22 @@
+# Sebastian Hodge
+
+> Sebastian Hodge is a go-to-market (GTM) engineer in Canberra, Australia who builds AI-powered systems that turn B2B strategy into predictable pipeline. He works with HubSpot, Clay, Notion, and AI automation, and is co-founder of Seicho.
+
+## Background
+
+- Business Development Manager at Brighta Group (B2B digital, brand, and lead-gen agency), since November 2025.
+- Co-founder and GTM Engineer at Seicho, the agentic layer between go-to-market strategy and distribution, since July 2024.
+- Growth Specialist and Principal BDR at HubSpot (2022-2025): 125% of target, $3M+ qualified pipeline.
+- Co-founder and CRO at Foremind (2021-2022): first customers and pipeline that raised a $200k seed round.
+- Account Executive and Inside Sales at SignOnSite (2018-2021): 36% of revenue, introduced MEDDICC.
+
+## Pages
+
+- [Home](https://sebastianhodge.com/): Portfolio, experience, and contact for Sebastian Hodge, GTM engineer.
+- [Writing](https://sebastianhodge.com/blog/): Essays and notes on GTM engineering, deal-analysis loops, and AI automation.
+- [Hello, world: building this site](https://sebastianhodge.com/blog/hello-world.html): How the site was built on a custom editorial design system in plain HTML and CSS.
+
+## Contact
+
+- Email: me@sebastianhodge.com
+- LinkedIn: https://www.linkedin.com/in/hodge-sebastian/

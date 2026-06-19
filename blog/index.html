@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Writing, Sebastian Hodge</title>
+  <meta name="description" content="GTM teardowns, deal-analysis loops, and notes on building the agentic layer of go-to-market, plus the occasional thought on AI, ADHD, and beating the printer." />
+  <link rel="canonical" href="https://sebastianhodge.com/blog/" />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sebastianhodge.com/blog/" />
+  <meta property="og:title" content="Writing, Sebastian Hodge" />
+  <meta property="og:description" content="GTM teardowns, deal-analysis loops, and notes on building the agentic layer of go-to-market, plus AI, ADHD, and beating the printer." />
+  <meta property="og:image" content="https://sebastianhodge.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Writing, Sebastian Hodge" />
+  <meta name="twitter:description" content="GTM teardowns, deal-analysis loops, and notes on building the agentic layer of go-to-market, plus AI, ADHD, and beating the printer." />
+  <meta name="twitter:image" content="https://sebastianhodge.com/images/og-image.png" />
+
+  <!-- paths are relative to /blog/ -->
+  <link rel="stylesheet" href="../css/system.css" />
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://sebastianhodge.com/blog/#blog",
+        "url": "https://sebastianhodge.com/blog/",
+        "name": "Writing, Sebastian Hodge",
+        "description": "GTM teardowns, deal-analysis loops, and notes on building the agentic layer of go-to-market.",
+        "author": {
+          "@type": "Person",
+          "@id": "https://sebastianhodge.com/#person",
+          "name": "Sebastian Hodge",
+          "url": "https://sebastianhodge.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sebastianhodge.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://sebastianhodge.com/blog/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="site-skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a class="site-brand" href="../index.html" aria-label="Sebastian Hodge, home">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <nav class="site-navlinks" id="navlinks" aria-label="Primary">
+        <a class="site-navlink" href="../index.html#work">Work</a>
+        <a class="site-navlink" href="../index.html#about">About</a>
+        <a class="site-navlink" href="index.html" aria-current="page">Writing</a>
+        <a class="site-navlink" href="../index.html#contact">Contact</a>
+        <a class="mp-btn mp-btn--sm" href="../index.html#contact">Get in touch</a>
+      </nav>
+      <button class="mp-btn mp-btn--icon mp-btn--secondary site-nav__toggle" id="navToggle"
+              aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+        <svg class="mp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="mp-shell">
+
+      <section class="site-hero mp-stack mp-stack--lg">
+        <h1 class="mp-display mp-display--xl">Writing</h1>
+        <p class="mp-body mp-body--lg site-hero__lead">
+          GTM teardowns, deal-analysis loops, and what I'm learning building the
+          agentic layer of go-to-market. Plus the occasional note about AI, ADHD,
+          and my ongoing war with the printer.
+        </p>
+      </section>
+
+      <!-- ============ POST LIST ============
+           To add a post: copy post-template.html to blog/your-slug.html,
+           then add a matching <a class="mp-card"> entry here. -->
+      <section class="site-section mp-grid--mosaic" aria-label="Posts">
+
+        <a class="mp-card mp-span-7" href="hello-world.html">
+          <div class="mp-card__media">
+            <img src="../screenshots/cover.png" alt="" />
+          </div>
+          <h2 class="mp-title">Hello, world: building this site</h2>
+          <p class="mp-body">How I assembled a personal site on top of a custom editorial design system.</p>
+          <span class="mp-meta" style="margin-top:auto;">Jun 18, 2026</span>
+        </a>
+
+        <!-- TODO: more post cards go here -->
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-brand" href="../index.html">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <div class="mp-row">
+        <a class="site-navlink" href="https://www.linkedin.com/in/hodge-sebastian/">LinkedIn</a>
+        <a class="site-navlink" href="../index.html#contact">Contact</a>
+      </div>
+      <p class="mp-meta">© <span id="year"></span> Sebastian Hodge</p>
+    </div>
+  </footer>
+
+  <script>
+    var t = document.getElementById('navToggle');
+    var n = document.getElementById('navlinks');
+    if (t && n) {
+      t.addEventListener('click', function () {
+        var open = n.classList.toggle('is-open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
