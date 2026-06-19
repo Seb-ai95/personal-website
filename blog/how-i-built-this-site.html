@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How I built this site, Sebastian Hodge</title>
+  <meta name="description" content="The stack and process behind this site: plain HTML and CSS, a custom design system, Claude Code, a contact form with no backend, and the dumb bug that broke it." />
+  <link rel="canonical" href="https://sebastianhodge.com/blog/how-i-built-this-site.html" />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sebastianhodge.com/blog/how-i-built-this-site.html" />
+  <meta property="og:title" content="How I built this site" />
+  <meta property="og:description" content="Plain HTML and CSS, a custom design system, Claude Code, a contact form with no backend, and the dumb bug that briefly broke it." />
+  <meta property="og:image" content="https://sebastianhodge.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How I built this site" />
+  <meta name="twitter:description" content="Plain HTML and CSS, a custom design system, Claude Code, a contact form with no backend, and the dumb bug that briefly broke it." />
+  <meta name="twitter:image" content="https://sebastianhodge.com/images/og-image.png" />
+
+  <link rel="stylesheet" href="../css/system.css" />
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How I built this site",
+        "description": "The stack and process behind this site: plain HTML and CSS, a custom design system, Claude Code, a contact form with no backend, and the dumb bug that broke it.",
+        "image": "https://sebastianhodge.com/images/og-image.png",
+        "datePublished": "2026-06-19",
+        "dateModified": "2026-06-19",
+        "mainEntityOfPage": "https://sebastianhodge.com/blog/how-i-built-this-site.html",
+        "url": "https://sebastianhodge.com/blog/how-i-built-this-site.html",
+        "author": {
+          "@type": "Person",
+          "@id": "https://sebastianhodge.com/#person",
+          "name": "Sebastian Hodge",
+          "url": "https://sebastianhodge.com/"
+        },
+        "publisher": { "@id": "https://sebastianhodge.com/#person" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sebastianhodge.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://sebastianhodge.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "How I built this site", "item": "https://sebastianhodge.com/blog/how-i-built-this-site.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="site-skip" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a class="site-brand" href="../index.html" aria-label="Sebastian Hodge, home">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <nav class="site-navlinks" id="navlinks" aria-label="Primary">
+        <a class="site-navlink" href="../index.html#work">Work</a>
+        <a class="site-navlink" href="../index.html#about">About</a>
+        <a class="site-navlink" href="index.html" aria-current="page">Writing</a>
+        <a class="site-navlink" href="../index.html#contact">Contact</a>
+        <a class="mp-btn mp-btn--sm" href="../index.html#contact">Get in touch</a>
+      </nav>
+      <button class="mp-btn mp-btn--icon mp-btn--secondary site-nav__toggle" id="navToggle"
+              aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+        <svg class="mp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="mp-shell">
+
+      <header class="article-head mp-stack mp-stack--lg">
+        <a class="mp-meta" href="index.html">All writing</a>
+        <h1 class="mp-display">How I built this site</h1>
+        <p class="mp-meta">Jun 19, 2026</p>
+      </header>
+
+      <div class="prose">
+        <p>I build go-to-market systems for a living, which mostly means wiring
+          tools together until pipeline comes out the other end. So when I
+          finally built my own site, I gave myself one rule: no framework, no
+          build step, nothing I would have to babysit at 11pm on a Sunday. Just
+          files I can read. Here is what it is actually made of, and the one bug
+          that briefly made me question my entire career.</p>
+
+        <h2>The whole stack fits in a sentence</h2>
+        <p>HTML and CSS. That is the stack. No React, no Next, no bundler, no
+          <code>node_modules</code> folder quietly eating half a gigabyte on my
+          laptop. The site is a handful of static files and two stylesheets, and
+          it will outlive every JavaScript framework I have ever been talked into
+          using.</p>
+        <ul>
+          <li>It loads instantly and hosts anywhere.</li>
+          <li>There is no build to break.</li>
+          <li>Every page is a plain file I can open and understand.</li>
+        </ul>
+
+        <h2>A design system doing the heavy lifting</h2>
+        <p>None of this would look like much without the part I did not want to
+          improvise: the design system. It is a small editorial kit I call
+          <strong>Mosaic Press</strong>. Cream paper, ink-black panels, and a
+          violet accent that is, deliberately, a touch too loud.</p>
+        <p>The trick is that nothing is hardcoded. Every colour, font, and spacing
+          step is a CSS custom property, so the whole site reads from one set of
+          tokens:</p>
+        <pre><code>:root {
+  --color-paper:  #f2ead8;
+  --color-ink:    #101010;
+  --color-violet: #5b3fff;
+  --font-display: "Instrument Serif", serif;
+}</code></pre>
+        <p>Change one variable and the entire site moves with it. Headings use
+          Instrument Serif because serifs read like they have finished a book.
+          Everything else is Inter Tight.</p>
+        <blockquote>Depth comes from colour blocking, not glassy shadows.</blockquote>
+
+        <h2>Claude Code did most of the typing</h2>
+        <p>I did not hand-write every tag. I described what I wanted to Claude
+          Code, usually across four terminal tabs because my attention works best
+          when it has somewhere to wander, and it wrote the markup while I argued
+          about spacing. When I want a new post, I copy a template file, fill in
+          the words, and add a card to the index. This post started life as
+          exactly that template.</p>
+
+        <h2>A contact form with no server</h2>
+        <p>I wanted a real contact form without standing up a backend just to
+          receive a handful of emails a month. Web3Forms handles that: the form
+          posts to their API, a little JavaScript catches the response, and you
+          get an inline confirmation without ever leaving the page.</p>
+        <p>It also handed me a lesson in humility. The form went completely dead
+          on the live site. The button would darken, and then nothing. I blamed
+          Cloudflare. I blamed caching. I blamed the universe. The actual culprit
+          was this innocent-looking line:</p>
+        <pre><code>var status = document.getElementById('formStatus');</code></pre>
+        <p>In the global scope, <code>status</code> quietly aliases the browser's
+          built-in <code>window.status</code>, which only holds text. My form
+          element got coerced into the string <code>"[object HTMLParagraphElement]"</code>,
+          and the handler threw before it ever sent anything. One renamed variable
+          and it worked. I can automate your growth. I apparently cannot always
+          name a variable.</p>
+
+        <h2>Writing for the robots too</h2>
+        <p>More than half of the visitors who find this site will not be people.
+          So it ships the boring, important stuff: Open Graph tags so links look
+          right when I drop them on LinkedIn, structured data so search engines
+          understand who I am, a sitemap, and an <code>llms.txt</code> that hands
+          AI crawlers a plain-language summary. If a model is going to describe me,
+          it can at least get the facts straight.</p>
+
+        <h2>Shipping it</h2>
+        <p>It lives on GitHub Pages, pointed at my own domain through Cloudflare.
+          A few DNS records, a <code>CNAME</code> file, HTTPS switched on, done.
+          The whole thing deploys when I push to <code>main</code>, which is the
+          only build step I am willing to tolerate.</p>
+        <p>Add it up and the running cost is the part I like most. GitHub Pages
+          hosts the files for nothing, Cloudflare handles DNS and HTTPS on its
+          free plan, and Web3Forms catches the contact form without a server.
+          The only thing I actually pay for is the domain. A whole site, a real
+          contact form, and a global CDN, for the price of a coffee a year.</p>
+
+        <hr />
+        <p>The point of all this is that you do not need much. A few files, a
+          design system, and a tool that types faster than you. I can wire up a
+          site, a CRM, and a small army of agents. The printer, however, remains
+          undefeated.</p>
+      </div>
+
+      <footer class="article-head mp-stack mp-stack--lg" style="margin-top:var(--space-3xl);">
+        <hr class="mp-divider" />
+        <div class="mp-row mp-row--between">
+          <a class="mp-btn mp-btn--secondary" href="index.html">All writing</a>
+          <a class="mp-btn mp-btn--accent" href="../index.html#contact">Get in touch</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-brand" href="../index.html">
+        <img class="site-brand__logo" src="../images/logo.svg" alt="Sebastian Hodge" />
+      </a>
+      <div class="mp-row">
+        <a class="site-navlink" href="https://www.linkedin.com/in/hodge-sebastian/">LinkedIn</a>
+        <a class="site-navlink" href="index.html">Writing</a>
+        <a class="site-navlink" href="../index.html#contact">Contact</a>
+      </div>
+      <p class="mp-meta">© <span id="year"></span> Sebastian Hodge</p>
+    </div>
+  </footer>
+
+  <script>
+    var t = document.getElementById('navToggle');
+    var n = document.getElementById('navlinks');
+    if (t && n) {
+      t.addEventListener('click', function () {
+        var open = n.classList.toggle('is-open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
