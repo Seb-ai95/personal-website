@@ -15,7 +15,6 @@
 - [Home](https://sebastianhodge.com/): Portfolio, experience, and contact for Sebastian Hodge, GTM engineer.
 - [Writing](https://sebastianhodge.com/blog/): Essays and notes on GTM engineering, deal-analysis loops, and AI automation.
 - [How I built this site](https://sebastianhodge.com/blog/how-i-built-this-site.html): The stack and process behind the site: plain HTML and CSS, a custom design system, Claude Code, and a no-backend contact form.
-- [Hello, world: building this site](https://sebastianhodge.com/blog/hello-world.html): How the site was built on a custom editorial design system in plain HTML and CSS.
 
 ## Contact
 
