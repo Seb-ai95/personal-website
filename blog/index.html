@@ -91,16 +91,18 @@
 
       <!-- ============ POST LIST ============
            To add a post: copy post-template.html to blog/your-slug.html,
-           then add a matching <a class="mp-card"> entry here. -->
+           then add a matching <a class="mp-digest-card"> entry here. -->
       <section class="site-section mp-grid--mosaic" aria-label="Posts">
 
-        <a class="mp-card mp-span-7" href="hello-world.html">
-          <div class="mp-card__media">
-            <img src="../screenshots/cover.png" alt="" />
+        <a class="mp-digest-card mp-span-7" href="hello-world.html">
+          <h2 class="mp-digest-card__title">Hello, world: <span class="mp-digest-card__italic">building this site</span></h2>
+          <p class="mp-digest-card__body">How I assembled a personal site on top of a custom editorial design system.</p>
+          <div class="mp-digest-card__foot">
+            <span class="mp-digest-card__meta">Jun 18, 2026</span>
+            <span class="mp-digest-card__cta">Read
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
           </div>
-          <h2 class="mp-title">Hello, world: building this site</h2>
-          <p class="mp-body">How I assembled a personal site on top of a custom editorial design system.</p>
-          <span class="mp-meta" style="margin-top:auto;">Jun 18, 2026</span>
         </a>
 
         <!-- TODO: more post cards go here -->
